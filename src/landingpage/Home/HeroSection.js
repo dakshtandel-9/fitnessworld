@@ -15,6 +15,7 @@ function HeroSection() {
                 justifyContent: 'center',
                 color: 'white',
                 textAlign: 'center',
+                background: 'rgba(0, 0, 0, 0.7)', // Adjusted for blending
             }}
         >
             <video

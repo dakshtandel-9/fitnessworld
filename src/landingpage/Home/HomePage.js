@@ -1,13 +1,16 @@
 import React from 'react';
 import HeroSection from './HeroSection';
 import PricingSection from './PricingSection';
+import { Box } from '@mui/material';
+import FitnessFacts from './FitnessFacts';
 
 function Home() {
     return (
-        <div>
+        <Box sx={{ position: 'relative' }}>
             <HeroSection />
+            <FitnessFacts />
             <PricingSection />
-        </div>
+        </Box>
     );
 }
 

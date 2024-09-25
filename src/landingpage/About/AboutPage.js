@@ -1,10 +1,9 @@
 import React from 'react';
+import AboutHeroSection from './AboutHeroSection';
 
 function About() {
     return (
-        <div>
-            About page
-        </div>
+        <AboutHeroSection />
     );
 }
 

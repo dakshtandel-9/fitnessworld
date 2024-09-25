@@ -1,9 +1,14 @@
 import React from 'react';
+import MembershipPricing from './MembershipPricing';
+import MembershipHeroSection from './MembershipHeroSection';
+
 
 function Membership() {
     return (
         <div>
-            <h1>Membership page</h1>
+            <MembershipHeroSection />
+            <MembershipPricing />
+
         </div>
     );
 }

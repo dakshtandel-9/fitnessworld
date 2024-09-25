@@ -83,7 +83,7 @@ function Navbar() {
                         <Button style={{ background: "none", color: "white", border: "2px solid white" }}>
                             Bangalore<LocationOnIcon style={{ color: "white" }} className='btn-lg' />
                         </Button>
-                        <Button style={{ background: "yellow", color: "black", border: "2px solid yellow" }} className='btn-lg ms-3'>
+                        <Button style={{ background: "#ff6d00", color: "black", border: "2px solid #ff6d00" }} className='btn-lg ms-3'>
                             Contacts
                         </Button>
                     </Box>
@@ -98,7 +98,7 @@ function Navbar() {
                                 <MenuItem onClick={handleAboutClick}>About</MenuItem>
                                 <MenuItem><Button style={{ background: "none", color: "gray", border: "2px solid white" }}>
                                     Bangalore<LocationOnIcon style={{ color: "white" }} className='btn-lg' />
-                                </Button><Button style={{ background: "yellow", color: "black", border: "2px solid yellow" }} className='btn-lg ms-3'>
+                                </Button><Button style={{ background: "#ff6d00", color: "black", border: "2px solid #ff6d00" }} className='btn-lg ms-3'>
                                         Contacts
                                     </Button></MenuItem>
                             </Menu>
