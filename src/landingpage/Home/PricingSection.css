@@ -1,0 +1,130 @@
+.pricing-section {
+    position: relative;
+    background-color: black;
+    color: white;
+    padding: 40px;
+    text-align: center;
+    overflow: hidden;
+    /* Prevent overflow from animations */
+}
+
+.section-title {
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+}
+
+.pricing-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    /* Space between cards */
+    position: relative;
+    z-index: 1;
+    /* Ensure cards are above the background */
+}
+
+.pricing-card {
+    display: flex;
+    flex-direction: column;
+    /* Stack items vertically */
+    justify-content: space-between;
+    /* Space between content and button */
+    background-color: #1c1c1c;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    min-width: 250px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0;
+    /* Start hidden */
+    transform: translateY(20px);
+    /* Start slightly below */
+    animation: fadeIn 0.5s forwards;
+    /* Fade-in animation */
+}
+
+.pricing-card.animate {
+    opacity: 1;
+    /* Fade in */
+    transform: translateY(0);
+    /* Move to original position */
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+    /* Lift effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+}
+
+.price {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.features {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    flex-grow: 1;
+    /* Allow features to take remaining space */
+}
+
+.feature-item {
+    margin: 5px 0;
+}
+
+.pricing-button {
+    background-color: #f50057;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pricing-button:hover {
+    background-color: #c51162;
+    /* Darker shade on hover */
+}
+
+/* Background Animation */
+.background-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(270deg, rgba(255, 20, 147, 0.5), rgba(0, 204, 255, 0.5));
+    animation: gradientAnimation 5s ease infinite;
+    z-index: 0;
+    /* Behind the cards */
+}
+
+/* Animation keyframes */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
