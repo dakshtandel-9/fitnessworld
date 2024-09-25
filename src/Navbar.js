@@ -8,8 +8,25 @@ import Menu from '@mui/joy/Menu';
 import MenuButton from '@mui/joy/MenuButton';
 import MenuItem from '@mui/joy/MenuItem';
 import Dropdown from '@mui/joy/Dropdown';
+import MenuIcon from '@mui/icons-material/Menu';
+import { useNavigate } from 'react-router-dom';
 
 function Navbar() {
+
+    const navigate = useNavigate();
+
+    const handleAboutClick = () => {
+        navigate('/about')
+    }
+
+    const handleMembershipClick = () => {
+        navigate('/membership')
+    }
+
+    const handleHomeClick = () => {
+        navigate('/')
+    }
+
     return (
         <div>
             <nav
@@ -29,7 +46,7 @@ function Navbar() {
             >
                 <div className="container-fluid">
                     <a className="navbar-brand fw-bolder" href="#" style={{ color: "white" }}>
-                        <Box
+                        <Box onClick={handleHomeClick}
                             sx={{
                                 width: {
                                     xs: "150px", // Width for extra-small screens
@@ -55,9 +72,9 @@ function Navbar() {
                     {/* Tabs only visible on medium screens and above */}
                     <Box sx={{ display: { xs: 'none', md: 'block' } }}>
                         <Tabs centered>
-                            <Tab label="Item One" style={{ color: "white", fontWeight: "bold" }} className='fs-6' />
-                            <Tab label="Item Two" style={{ color: "white", fontWeight: "bold" }} className='fs-6' />
-                            <Tab label="Item Three" style={{ color: "white", fontWeight: "bold" }} className='fs-6' />
+                            <Tab onClick={handleHomeClick} label="Home" style={{ color: "white", fontWeight: "bold" }} className='fs-6' />
+                            <Tab onClick={handleMembershipClick} label="Membership" style={{ color: "white", fontWeight: "bold" }} className='fs-6' />
+                            <Tab onClick={handleAboutClick} label="About" style={{ color: "white", fontWeight: "bold" }} className='fs-6' />
                         </Tabs>
                     </Box>
 
@@ -74,9 +91,11 @@ function Navbar() {
                     {/* Dropdown menu for mobile view */}
                     <Box sx={{ display: { xs: 'block', md: 'none' } }}>
                         <Dropdown>
-                            <MenuButton>Actions</MenuButton>
+                            <MenuButton><MenuIcon /></MenuButton>
                             <Menu style={{ backgroundColor: "black", border: "none" }}>
-                                <MenuItem>Add item</MenuItem>
+                                <MenuItem onClick={handleHomeClick}>  Home</MenuItem>
+                                <MenuItem onClick={handleMembershipClick}>Mebership</MenuItem>
+                                <MenuItem onClick={handleAboutClick}>About</MenuItem>
                                 <MenuItem><Button style={{ background: "none", color: "gray", border: "2px solid white" }}>
                                     Bangalore<LocationOnIcon style={{ color: "white" }} className='btn-lg' />
                                 </Button><Button style={{ background: "yellow", color: "black", border: "2px solid yellow" }} className='btn-lg ms-3'>
