@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './PricingSection.css'; // Ensure to import your CSS for styling
 import Membership from '../Membership/MembershipPage';
 
